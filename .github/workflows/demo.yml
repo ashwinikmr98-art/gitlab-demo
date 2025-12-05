@@ -10,6 +10,7 @@ permissions:
 jobs:
   demo-job:
     runs-on: ubuntu-latest
+    environment: AWS
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,5 +28,6 @@ jobs:
         run: terraform init
       - name: Apply Terraform configuration
         run: terraform apply -auto-approve
+
 
 
