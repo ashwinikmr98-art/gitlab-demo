@@ -28,6 +28,7 @@ jobs:
         run: terraform init
       - name: Apply Terraform configuration
         run: terraform apply -auto-approve
-
-
+      - name: Destroy Terraform resources
+        if: always()
+        run: terraform destroy -auto-approve
 
